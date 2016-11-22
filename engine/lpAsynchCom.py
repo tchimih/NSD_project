@@ -19,16 +19,19 @@ def initalize(G):
         labels[node] = node
     return labels
 
-def detectComm(G, weight= None):
+def detectComm(G):
     """
 	This function will try to detect a community using the near linear algorithm as 
-	discribed in [1]
+	discribed in [1].
+	
+	The implementation was inspired from [1] that were implemented in R but we took our inspiration from [2].
 
 	References
     ----------
     .. [1] Raghavan, Usha Nandini, Réka Albert, and Soundar Kumara. "Near
            linear time algorithm to detect community structures in large-scale
            networks." Physical Review E 76.3 (2007): 036106.
+    .. [2] https://networkx.readthedocs.io/en/latest/_modules/networkx/algorithms/community
     """
     labels  = initalize(G)
     check   = True
